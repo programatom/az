@@ -1,0 +1,78 @@
+<div class="row justify-content-md-center">
+  <button routerLink="/fraseGen" type="button" name="button" class="btn waves-effect waves-light btn-rounded btn-secondary">
+    Volver
+  </button>
+</div>
+
+<br>
+<div class="row">
+  <div class="col-md-6" *ngFor="let frase of frases; let i = index">
+    <h2>Frase numero: {{frase.id}}</h2>
+    <div class="card card-body" *ngFor="let conector of frase.conectores; let i = index">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card-title">
+            {{conector.caracter}}
+          </div>
+          <ul>
+            <li *ngIf="conector.posicion">
+              <strong>Posicion:</strong> {{conector.posicion}}
+            </li>
+            <li *ngIf="conector.numero">
+              <strong>Numero:</strong> {{conector.numero}}
+            </li>
+            <li *ngIf="conector.genero">
+              <strong>Genero:</strong> {{conector.genero}}
+            </li>
+            <li *ngIf="conector.tipo">
+              <strong>Tipo:</strong> {{conector.tipo}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card card-body" *ngFor="let palabra of frase.palabras; let i = index">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card-title">
+            {{palabra.caracter}}
+          </div>
+          <ul>
+            <li *ngIf="palabra.posicion">
+              <strong>Posicion:</strong> {{palabra.posicion}}
+            </li>
+            <li *ngIf="palabra.numero">
+              <strong>Numero:</strong> {{palabra.numero}}
+            </li>
+            <li *ngIf="palabra.persona">
+              <strong>Persona:</strong> {{palabra.persona}}
+            </li>
+            <li *ngIf="palabra.tiempo">
+              <strong>Tiempo:</strong> {{palabra.tiempo}}
+            </li>
+            <li *ngIf="palabra.genero">
+              <strong>Genero:</strong> {{palabra.genero}}
+            </li>
+            <li *ngIf="palabra.modo">
+              <strong>Modo:</strong> {{palabra.modo}}
+            </li>
+            <li *ngIf="palabra.fijo">
+              <strong>Palabra fija:</strong> {{palabra.fijo}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <button (click)="eliminarFrase(frase, i)" type="button" name="button" class="btn waves-effect waves-light btn-rounded btn-secondary">
+        Eliminar de base de datos
+      </button>
+    </div>
+    <br><br>
+  </div>
+</div>
+
+<div id="loader12345">
+  <div class="loader" >
+  </div>
+</div>

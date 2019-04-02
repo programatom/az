@@ -1,0 +1,39 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+
+<body class="card-no-border">
+  <section id="wrapper">
+    <div class="login-register" style="background-image:url(../assets/images/background/login-register.jpg);">
+      <div class="login-box card">
+        <div class="card-body">
+          <form class="form-horizontal form-material" id="loginform" action="index.html">
+            <h3 class="box-title m-b-20">Iniciar sesión</h3>
+            <div class="form-group ">
+              <div class="col-xs-12">
+                <input class="form-control" [ngModelOptions]="{standalone: true}" type="text" required="" [(ngModel)]="usuario" placeholder="Usuario">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <input class="form-control"  [ngModelOptions]="{standalone: true}" type="password" required="" [(ngModel)]="contrasena" placeholder="Contraseña">
+              </div>
+            </div>
+            <div class="form-group row justify-content-center">
+              <div class="form-group text-center">
+                <div class="col-xs-12 p-b-20">
+                  <button class="btn btn-block btn-lg btn-rounded waves-effect waves-light btn-secondary" type="submit" (click)="login()">Ingresar</button>
+                </div>
+                <br>
+                <div class="col-xs-12 p-b-20">
+                  <button class="btn btn-block btn-lg btn-rounded waves-effect waves-light btn-secondary" routerLink="/principal">Volver</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>

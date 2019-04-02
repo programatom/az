@@ -1,0 +1,54 @@
+import { ObjArticulo } from "../interfaces/interfaces"
+
+export const ARTICULOS:Array<ObjArticulo> =
+[
+  {
+    "articulo":"el",
+    "numero":"singular",
+    "genero":"masculino",
+    "tipo":"determinado",
+  },
+  {
+    "articulo":"los",
+    "numero":"plural",
+    "genero":"masculino",
+    "tipo":"determinado",
+  },
+  {
+    "articulo":"la",
+    "numero":"singular",
+    "genero":"femenino",
+    "tipo":"determinado",
+  },
+  {
+    "articulo":"las",
+    "numero":"plural",
+    "genero":"femenino",
+    "tipo":"determinado",
+  },
+  {
+    "articulo":"una",
+    "numero":"singular",
+    "genero":"femenino",
+    "tipo":"indeterminado",
+  },
+  {
+    "articulo":"unas",
+    "numero":"plural",
+    "genero":"femenino",
+    "tipo":"indeterminado",
+  },
+  {
+    "articulo":"uno",
+    "numero":"singular",
+    "genero":"masculino",
+    "tipo":"indeterminado",
+  },
+  {
+    "articulo":"unos",
+    "numero":"plural",
+    "genero":"masculino",
+    "tipo":"indeterminado",
+  },
+
+]

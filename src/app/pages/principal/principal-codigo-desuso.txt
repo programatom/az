@@ -1,0 +1,113 @@
+
+  initContador() {
+    this.procesadorApi.cantidadDePalabras().subscribe((respuesta: any) => {
+      console.log(respuesta);
+      this.lastCount = respuesta.data;
+      let stringCountS = this.splitNumWithLeftPad(respuesta.data);
+
+      if (stringCountS[0] != undefined) {
+        let number = parseInt(stringCountS[0]);
+        let contador = 0;
+        let interval = setInterval(() => {
+          if (contador == number) {
+            clearInterval(interval);
+          } else {
+            fourthPlay()
+            contador = contador + 1;
+          }
+        }, 1000)
+      }
+      if (stringCountS[1] != undefined) {
+        let number = parseInt(stringCountS[1]);
+        let contador = 0;
+        let interval = setInterval(() => {
+          if (contador == number) {
+            clearInterval(interval);
+          } else {
+            thirdPlay()
+            contador = contador + 1;
+          }
+        }, 1000)
+
+      }
+      if (stringCountS[2] != undefined) {
+        let number = parseInt(stringCountS[2]);
+        let contador = 0;
+        let interval = setInterval(() => {
+          if (contador == number) {
+            clearInterval(interval);
+          } else {
+            secondPlay()
+            contador = contador + 1;
+          }
+        }, 1000)
+
+      }
+      if (stringCountS[3] != undefined) {
+        let number = parseInt(stringCountS[3]);
+        let contador = 0;
+        let interval = setInterval(() => {
+          if (contador == number) {
+            clearInterval(interval);
+          } else {
+            minutePlay()
+            contador = contador + 1;
+          }
+        }, 1000)
+      }
+
+    })
+  }
+
+
+
+  sumarCamposIntervalFilterCampo(diferencia) {
+    let contador = 0;
+    let interval = setInterval(() => {
+      if (contador == diferencia) {
+        clearInterval(interval);
+      } else {
+        let lastCountS = this.splitNumWithLeftPad(this.lastCount);
+        this.lastCount = this.lastCount + 1;
+        let newNumberS = this.splitNumWithLeftPad(this.lastCount);
+        for (let i = 0; i < 4; i++) {
+
+          if (lastCountS[i] != newNumberS[i]) {
+            this.sumarCampo(i);
+          }
+        }
+        contador = contador + 1;
+      }
+    }, 1000);
+  }
+
+  splitNumWithLeftPad(number) {
+    let lengthNumero = number.toString().length;
+    let lastCountSplit = number.toString().split("");
+    if (lengthNumero < 4) {
+      let dif = 4 - lengthNumero;
+      for (let i = 0; i < dif; i++) {
+        lastCountSplit.unshift("0");
+      }
+    }
+    return lastCountSplit;
+  }
+
+  sumarCampo(campoASumar) {
+    if (campoASumar == 3) {
+      minutePlay()
+      return;
+    }
+    if (campoASumar == 2) {
+      secondPlay()
+      return;
+    }
+    if (campoASumar == 1) {
+      thirdPlay()
+      return;
+    }
+    if (campoASumar == 0) {
+      fourthPlay();
+      return;
+    }
+  }

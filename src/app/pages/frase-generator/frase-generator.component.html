@@ -1,0 +1,235 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card card-body">
+      <div class="switch">
+        <label>P
+          <input type="checkbox" checked (click)="cambiarTipoDeForm()"><span class="lever"></span>C</label>
+      </div>
+      <h3 class="box-title m-b-0">{{tipoDeForm}}</h3>
+      <br>
+      <div class="row">
+        <div class="col-sm-12 col-xs-12">
+          <form>
+            <div id="palabras">
+              <div class="form-group">
+                <label class="control-label">Caracter gramatical</label>
+                <select class="form-control custom-select" id="caracter_P">
+                  <option value="default">Elegir</option>
+                  <option value="sustantivo">Sustantivo</option>
+                  <option value="adjetivo">Adjetivo</option>
+                  <option value="adverbio">Adverbio</option>
+                  <option value="verbo">Verbo</option>
+                  <option value="palabra_fija">Palabra Fija</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Posicion</label>
+                <input type="number" class="form-control" placeholder="Campo requerido!" id="posicion_P">
+              </div>
+              <div class="input-group mb-3" >
+                <input id="fijo_P" type="text" class="form-control" placeholder="Ingrese una palabra fija" aria-label="Ingrese una palabra fija" aria-describedby="basic-addon2" />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Genero</label>
+                <select class="form-control custom-select" id="genero_P">
+                  <option value="default">No aplica</option>
+                  <option value="masculino">Masculino</option>
+                  <option value="femenino">Femenino</option>
+                  <option value="indefinido">Indefinido (sustantivos para nom propio)</option>
+                </select>
+              </div>
+
+
+
+              <div class="form-group">
+                <label class="control-label">Numero</label>
+                <select class="form-control custom-select" id="numero_P">
+                  <option value="default">No aplica</option>
+                  <option value="singular">Singular</option>
+                  <option value="plural">Plural</option>
+                  <option value="indefinido">Indefinido (sustantivos para nom propio)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="control-label">Persona</label>
+                <select class="form-control custom-select" id="persona_P">
+                  <option value="default">No aplica</option>
+                  <option value="1">1</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="control-label">Tiempo</label>
+                <select class="form-control custom-select" id="tiempo_P">
+                  <option value="default">No aplica</option>
+                  <option value="presente">Presente</option>
+                  <option value="preterito perfecto">Preterito Prefecto</option>
+                  <option value="futuro">Futuro</option>
+                  <option value="preterito imperfecto">Preterito Imperfecto</option>
+                  <option value="infinitivo">Infinitivo</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="control-label">Modo</label>
+                <select class="form-control custom-select" id="modo_P">
+                  <option value="default">No aplica</option>
+                  <option value="gerundio">Gerundio</option>
+                </select>
+              </div>
+            </div>
+            <div id="conectores">
+              <div class="form-group">
+                <label class="control-label">Caracter gramatical</label>
+                <select class="form-control custom-select" id="caracter_C">
+                  <option value="default">Elegir</option>
+                  <option value="articulo">Articulo</option>
+                  <option value="preposicion">Preposicion</option>
+                  <option value="pronombre">Pronombre</option>
+                  <option value="conjuncion">Conjuncion</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Posicion</label>
+                <input type="number" class="form-control" placeholder="Campo requerido!" id="posicion_C">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Numero</label>
+                <select class="form-control custom-select" id="numero_C">
+                  <option value="default">No aplica</option>
+                  <option value="singular">Singular</option>
+                  <option value="plural">Plural</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="control-label">Genero</label>
+                <select class="form-control custom-select" id="genero_C">
+                  <option value="default">No aplica</option>
+                  <option value="masculino">Masculino</option>
+                  <option value="femenino">Femenino</option>
+                  <option value="indefinido">Indefinido(pronombres)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Persona</label>
+                <select class="form-control custom-select" id="persona_C">
+                  <option value="default">No aplica</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="control-label">Tipo</label>
+                <select class="form-control custom-select" id="tipo_C">
+                  <option value="default">No aplica</option>
+                  <option value="personal tonico">Personal Tonico (pronombres)</option>
+                  <option value="copulativa">Copulativa (conjuncion)</option>
+                  <option value="adversativa">Adversativa(conjuncion)</option>
+                  <option value="disyuntiva">Disyuntiva(conjuncion)</option>
+                  <option value="determinado">Determinado (articulos)</option>
+                  <option value="indeterminado">Indeterminado (articulos, pronombres)</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-success waves-effect waves-light m-r-10" (click)="agregar()">Agregar</button>
+            <button type="submit" class="btn btn-inverse waves-effect waves-light" (click)="reInitObj()">Limpiar campos</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card card-body" *ngFor="let conector of arrayConectores; let i = index">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card-title">
+            {{conector.caracter}}
+          </div>
+          <ul>
+            <li *ngIf="conector.posicion">
+              <strong>Posicion:</strong> {{conector.posicion}}
+            </li>
+            <li *ngIf="conector.numero">
+              <strong>Numero:</strong> {{conector.numero}}
+            </li>
+            <li *ngIf="conector.genero">
+              <strong>Genero:</strong> {{conector.genero}}
+            </li>
+            <li *ngIf="conector.tipo">
+              <strong>Tipo:</strong> {{conector.tipo}}
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn waves-effect waves-light btn-rounded btn-secondary" (click)="eliminar('conector', i)">
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card card-body" *ngFor="let palabra of arrayPalabras; let i = index">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card-title">
+            {{palabra.caracter}}
+          </div>
+          <ul>
+            <li *ngIf="palabra.posicion">
+              <strong>Posicion:</strong> {{palabra.posicion}}
+            </li>
+            <li *ngIf="palabra.fijo">
+              <strong>Palabra Fija:</strong> {{palabra.fijo}}
+            </li>
+            <li *ngIf="palabra.numero">
+              <strong>Numero:</strong> {{palabra.numero}}
+            </li>
+            <li *ngIf="palabra.persona">
+              <strong>Persona:</strong> {{palabra.persona}}
+            </li>
+            <li *ngIf="palabra.tiempo">
+              <strong>Tiempo:</strong> {{palabra.tiempo}}
+            </li>
+            <li *ngIf="palabra.genero">
+              <strong>Genero:</strong> {{palabra.genero}}
+            </li>
+            <li *ngIf="palabra.modo">
+              <strong>Modo:</strong> {{palabra.modo}}
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn waves-effect waves-light btn-rounded btn-secondary" (click)="eliminar('palabra', i)">
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-md-center">
+  <button (click)="guardarFrase()" type="button" [disabled]="loading" name="button" class="btn waves-effect waves-light btn-rounded btn-secondary">
+    Guardar frase en base de datos
+  </button>
+</div>
+<br>
+<div class="row justify-content-md-center">
+  <button routerLink="/frasesVisual" type="button" [disabled]="loading" name="button" class="btn waves-effect waves-light btn-rounded btn-secondary">
+    Ver todas las frases
+  </button>
+</div>
+<br>
+<div class="row justify-content-md-center">
+  <button routerLink="/principal" type="button" [disabled]="loading" name="button" class="btn waves-effect waves-light btn-rounded btn-secondary">
+    Volver a pantalla principal
+  </button>
+</div>
+
+<div id="loader1234">
+  <div class="loader">
+    <span>Enviando..</span>
+  </div>
+</div>

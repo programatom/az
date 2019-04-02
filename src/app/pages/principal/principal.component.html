@@ -1,0 +1,57 @@
+<div class="posicion-frenar" (click)="frenarAnimacion()">
+  <h4 style="color:white;font-family: AZFont;font-size:4vw;">
+    Detener
+  </h4>
+</div>
+<div class="container-flip">
+  <div class="container-counter">
+    <div class="rectangulo-numero">
+      <a class="numero">
+        {{cuatro}}
+      </a>
+    </div>
+    <div class="rectangulo-numero">
+      <a class="numero">
+        {{tres}}
+      </a>
+    </div>
+    <div class="rectangulo-numero">
+      <a class="numero">
+        {{dos}}
+      </a>
+    </div>
+    <div class="rectangulo-numero">
+      <a class="numero">
+        {{uno}}
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6 col-lg-4">
+    <div class="rectangulo-ingrese-palabra">
+      <input type="text" class="input-custom" id="input-palabra" [(ngModel)]="palabra" onblur="this.placeholder = 'Ingrese una palabra'" placeholder="Ingrese una palabra" autocomplete="off" onfocus="this.placeholder = ''">
+    </div>
+  </div>
+</div>
+
+<div class="row" style="margin-top:3vw">
+  <div class="col-3 col-lg-2 center">
+    <div class="boton-enviar-palabra" (click)="enviarPalabra()" id="boton-input-palabra">
+      ENVIAR
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+
+
+<div class="frases-container">
+  <h2>
+    <span id="frases"></span>
+    {{stringFrases}}
+
+  </h2>
+</div>
